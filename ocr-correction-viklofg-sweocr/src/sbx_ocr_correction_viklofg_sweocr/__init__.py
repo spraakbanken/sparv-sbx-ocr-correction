@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 from sparv.api import (  # type: ignore [import-untyped]
     Annotation,
@@ -75,12 +75,12 @@ class OcrCorrector:
         )
         return cls(model=model, tokenizer=tokenizer)
 
-    def calculate_corrections(self, text: list[str]) -> list[Optional[str]]:
+    def calculate_corrections(self, text: List[str]) -> List[Optional[str]]:
         logger.debug("Analyzing '%s'", text)
         parts = []
-        curr_part: list[str] = []
+        curr_part: List[str] = []
         curr_len = 0
-        ocr_corrections: list[str] = []
+        ocr_corrections: List[str] = []
         for word in text:
             len_word = bytes_length(word)
             if (curr_len + len_word + 1) > self.TEXT_LIMIT:
@@ -102,7 +102,7 @@ class OcrCorrector:
         return zip_and_diff(text, ocr_corrections)
 
 
-def zip_and_diff(orig: list[str], sugg: list[str]) -> list[Optional[str]]:
+def zip_and_diff(orig: List[str], sugg: List[str]) -> List[Optional[str]]:
     return [sw if sw != ow else None for (ow, sw) in zip(orig, sugg)]
 
 

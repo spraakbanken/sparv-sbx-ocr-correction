@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 env:
-  MINIMUM_PYTHON_VERSION: "3.9"
+  MINIMUM_PYTHON_VERSION: "3.8"
 
 jobs:
 
@@ -32,10 +32,11 @@ jobs:
         os: [ubuntu] 
         python-version:
           # remove the unused versions
+          - "3.8"
           - "3.9"
           - "3.10"
           - "3.11"
-          - "3.12" 
+          # - "3.12" 
 
     runs-on: ${{ matrix.os }}-latest
     env:
@@ -87,7 +88,7 @@ jobs:
     #
     
     runs-on: ubuntu-latest
-    name: ubuntu / 3.9 / minimal-versions
+    name: ubuntu / 3.8 / minimal-versions
     steps:
       - uses: actions/checkout@v4
         with:

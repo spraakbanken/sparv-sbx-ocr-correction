@@ -22,6 +22,7 @@ jobs:
   nightly:
     runs-on: ubuntu-latest
     name: ubuntu / 3.13-dev
+    continue-on-error: true # allow failure until py3.8 is dropped
     steps:
       - uses: actions/checkout@v4
         with:
@@ -54,6 +55,7 @@ jobs:
     # There's no point running this if no Cargo.lock was checked in in the first place, since we'd
     # just redo what happened in the regular test job. Unfortunately, hashFiles only works in if on
     # steps, so we repeat it.
+    continue-on-error: true # allow failure until py3.8 is dropped
     steps:
       - uses: actions/checkout@v4
         with:

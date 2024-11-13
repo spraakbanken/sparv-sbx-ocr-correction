@@ -8,3 +8,8 @@
 This repo contains the following projects:
 
 - [sparv-sbx-ocr-correction-viklofg-sweocr](./ocr-correction-viklofg-sweocr/) [![PyPI version](https://badge.fury.io/py/sparv-sbx-ocr-correction-viklofg-sweocr.svg)](https://pypi.org/project/sparv-sbx-ocr-correction-viklofg-sweocr)
+
+
+## Develop
+
+> [!NOTE] You might need to prepend `export CFLAGS="-Wno-error=incompatible-pointer-types" ; export CXXFLAGS="-Wno-error=incompatible-pointer-types" ;` to the `make dev` or `make install` calls.

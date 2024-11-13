@@ -1,0 +1,3 @@
+pytest
+syrupy
+sparv-pipeline-testing @ git+https://github.com/spraakbanken/sparv-pipeline-testing.git@v0.1.7

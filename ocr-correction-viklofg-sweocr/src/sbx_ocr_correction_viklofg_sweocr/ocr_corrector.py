@@ -80,6 +80,7 @@ def align_and_diff(
     g: graph.Graph, *, curr_start: int
 ) -> Tuple[List[Tuple[Tuple[int, int], Optional[str]]], int]:
     corrections = []
+
     edge_map = graph.edge_map(g)
     visited_tokens = set()
     for s_token in g.source:

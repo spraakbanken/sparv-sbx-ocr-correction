@@ -13,6 +13,9 @@ Sparv plugin to annotate corrections to OCR:ed documents.
 
 ## Install
 
+> [!NOTE] You might need to prepend `export CFLAGS="-Wno-error=incompatible-pointer-types" ; export CXXFLAGS="-Wno-error=incompatible-pointer-types" ;` to the `pip install` call.
+
+
 In a virtual environment:
 
 ```bash
